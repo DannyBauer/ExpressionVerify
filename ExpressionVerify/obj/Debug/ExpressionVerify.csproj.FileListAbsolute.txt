@@ -12,3 +12,10 @@ C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\Ex
 C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.csproj.CoreCompileInputs.cache
 C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.exe
 C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.pdb
+C:\Users\Dave\Documents\Visual Studio 2017\Projects\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.exe.config
+C:\Users\Dave\Documents\Visual Studio 2017\Projects\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.exe
+C:\Users\Dave\Documents\Visual Studio 2017\Projects\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.pdb
+C:\Users\Dave\Documents\Visual Studio 2017\Projects\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.csprojResolveAssemblyReference.cache
+C:\Users\Dave\Documents\Visual Studio 2017\Projects\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.csproj.CoreCompileInputs.cache
+C:\Users\Dave\Documents\Visual Studio 2017\Projects\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.exe
+C:\Users\Dave\Documents\Visual Studio 2017\Projects\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.pdb
