@@ -1,0 +1,7 @@
+E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.exe.config
+E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.exe
+E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.pdb
+E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.csprojResolveAssemblyReference.cache
+E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.csproj.CoreCompileInputs.cache
+E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.exe
+E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.pdb
