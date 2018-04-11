@@ -5,3 +5,10 @@ E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\obj\Debug\Express
 E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.csproj.CoreCompileInputs.cache
 E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.exe
 E:\Project Files\Expressions\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.pdb
+C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.exe.config
+C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.exe
+C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\bin\Debug\ExpressionVerify.pdb
+C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.csprojResolveAssemblyReference.cache
+C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.csproj.CoreCompileInputs.cache
+C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.exe
+C:\Users\dbaue\Desktop\School\Software Engineering\Project 2\ExpressionVerify\ExpressionVerify\obj\Debug\ExpressionVerify.pdb

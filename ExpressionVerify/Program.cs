@@ -16,7 +16,7 @@ namespace ExpressionVerify
                                                                                  // so to know what current tag we are in just look at the top of the list
             expressionTypeTracker.AddLast("NoTag");                                                             
             string line;
-            StreamReader file = new StreamReader("E:\\Documents\\expressions.txt");
+            StreamReader file = new StreamReader("C:\\Users\\dbaue\\Desktop\\School\\Software Engineering\\Project 2\\ExpressionVerify\\expressions.txt");
             while ((line = file.ReadLine()) != null)
             {
                 List<char> lineCharList = new List<char>();
