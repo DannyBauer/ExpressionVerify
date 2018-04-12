@@ -56,12 +56,52 @@ namespace ExpressionVerify
                     {
                         Console.Write(c);
                     }
+
+                    if (expressionTypeTracker.Last.Value == "strings")
+                        StringEqivalance(lineCharList);
+
+
                 }
                 Console.WriteLine(expressionTypeTracker.Last());
             }
 
             while (true) { }
         }
+
+        public static void StringEqivalance(List<char> Line)
+        {
+            List<char> leftSide = new List<char>();
+            List<char> rightSide = new List<char>();
+
+            //Populate the leftside and rightside lists of the equation
+            bool setLeft = true;
+            foreach(var digit in Line)
+            {
+                if (digit.ToString() == "=") { 
+                    setLeft = false;
+                    continue; //Skip the = sign
+                }
+                if (setLeft)
+                    leftSide.Add(digit);
+                else
+                    rightSide.Add(digit);
+            }
+
+
+            SimplifySide(leftSide);
+            SimplifySide(rightSide);
+
+
+        }
+
+        public static string SimplifySide(List<char> Side)
+        {
+
+            return "ay";
+        }
+
+
+
         public static string MultiplyString(string s, int multiplier)
         {
             string adder = s;
