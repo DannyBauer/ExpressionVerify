@@ -8,6 +8,7 @@ namespace ExpressionVerify
 {
     class Expression
     {
-        public static string type;
+        public string type;
+        public List<List<char>> expressions = new List<List<char>>();
     }
 }

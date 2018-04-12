@@ -11,6 +11,7 @@ namespace ExpressionVerify
     {
         static void Main(string[] args)
         {
+            List<Expression> expressions = new List<Expression>();
             LinkedList<string> expressionTypeTracker = new LinkedList<string>(); //when we are in a certain tag we can push to this list the tag we are in 
                                                                                  // and when we leave the tag pop out the tag so we go back to the previous tag
                                                                                  // so to know what current tag we are in just look at the top of the list
@@ -19,7 +20,6 @@ namespace ExpressionVerify
             StreamReader file = new StreamReader("expressions.txt");
             while ((line = file.ReadLine()) != null)
             {
-                List<char> lineCharList = new List<char>();
 
                 //check for beginning tag and add them to tracker 
                 if (line.Contains("strings") && !line.Contains("/"))
@@ -44,20 +44,29 @@ namespace ExpressionVerify
                 {
                     expressionTypeTracker.RemoveLast();
                 }
-              
+                
                 else
                 {
+                    Expression ex = new Expression();
+                    List<char> charList = new List<char>();
+
+                    ex.type = expressionTypeTracker.Last();
                     foreach (char c in line)
                     {
-                        if (c != ' ')
-                            lineCharList.Add(c);
+                        if (c == '=')
+                        {
+                            ex.expressions.Add(charList);
+                            charList = new List<char>();
+                        }
+                        else if (c != ' ')
+                        {
+                            charList.Add(c);
+                        }
+
                     }
-                    foreach (char c in lineCharList)
-                    {
-                        Console.Write(c);
-                    }
+                    ex.expressions.Add(charList);
+                    expressions.Add(ex);
                 }
-                Console.WriteLine(expressionTypeTracker.Last());
             }
 
             while (true) { }
