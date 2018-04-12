@@ -42,8 +42,9 @@ namespace ExpressionVerify
                 for (int i = beginLoc + 1; i < lastLoc; i++)
                     substring.Add(Side[i]);
 
+                int count = substring.Count + 2;
                 result = HandleMultAndAdd(substring);
-                Side.RemoveRange(beginLoc, lastLoc - 1);
+                Side.RemoveRange(beginLoc, count);
                 Side.Insert(beginLoc, result);
             }
 
@@ -104,20 +105,5 @@ namespace ExpressionVerify
 
             return result;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

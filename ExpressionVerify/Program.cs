@@ -67,15 +67,20 @@ namespace ExpressionVerify
                     ex.expressions.Add(charList);
                     expressions.Add(ex);
 
-                    if (expressionTypeTracker.Last.Value == "strings")                    
+                    if (expressionTypeTracker.Last.Value == "strings")
+                    {
                         ex.IsTrue = StringHandler.StringEqivalance(ex);
+                        Console.WriteLine(line + ex.IsTrue.ToString());
+                    }
 
                     if (expressionTypeTracker.Last.Value == "algebra")
                         ;
 
                     if (expressionTypeTracker.Last.Value == "sets")
+                    {
                         ex.IsTrue = SetHandler.SetEqivalance(ex);
-
+                        Console.WriteLine(line + ex.IsTrue.ToString());
+                    }
                     if (expressionTypeTracker.Last.Value == "boolean")
                         ;
 
