@@ -64,22 +64,100 @@ namespace ExpressionVerify
                         }
 
                     }
+<<<<<<< HEAD
                     ex.expressions.Add(charList);
                     expressions.Add(ex);
+=======
+
+                    if (expressionTypeTracker.Last.Value == "strings")
+                        StringEqivalance(lineCharList);
+
+
+>>>>>>> 62a271eacf5924af7a755a0941dd11fb909addb3
                 }
             }
 
             while (true) { }
         }
-        public static string MultiplyString(string s, int multiplier)
+
+        public static bool StringEqivalance(List<char> Line)
         {
-            string adder = s;
-            for (int i = 0; i < (multiplier - 1); i++)
+            List<string> leftSide = new List<string>();
+            List<string> rightSide = new List<string>();
+
+            //Populate the leftside and rightside lists of the equation
+            bool setLeft = true;
+            foreach(var digit in Line)
             {
-                s = s + adder;
+                if (digit.ToString() == "=") { 
+                    setLeft = false;
+                    continue; //Skip the = sign
+                }
+                if (setLeft)
+                    leftSide.Add(digit.ToString());
+                else
+                    rightSide.Add(digit.ToString());
             }
 
-            return s;
+            //Simplify the results down to a single string 
+            string leftResult = SimplifySide(leftSide);
+            string rightResult = SimplifySide(rightSide);
+
+            //Compare and return results
+            return (leftResult == rightResult);
+        }
+
+        public static string SimplifySide(List<string> Side)
+        {
+            string result = "";
+
+            //Handle parenthesis
+
+            //Handle Multiplications first
+            for(int i = 0; i < Side.Count; i++)
+            {
+                if (Side[i].ToString() == "*")
+                {
+                    result = MultiplyString(Side[i - 1], Side[i + 1]); //get the result
+                    //Remove the old stuff and replace with the new result
+                    Side.RemoveAt(i - 1);
+                    Side[i - 1] = result;
+                    Side.RemoveAt(i);
+                    i = 0; //Restart loop
+                }
+            }
+
+            //Handle additions next
+            for (int i = 0; i < Side.Count; i++)
+            {
+                if (Side[i].ToString() == "+")
+                {
+                    result = AddString(Side[i - 1], Side[i + 1]); //get the result
+                    //Remove the old stuff and replace with the new result
+                    Side.RemoveAt(i - 1);
+                    Side[i - 1] = result;
+                    Side.RemoveAt(i);
+                    i = 0; //Restart loop
+                }
+            }
+
+            return result;
+        }
+
+        public static string AddString(string a, string b)
+        {
+            return a + b;
+        }
+
+        public static string MultiplyString(string a, string multiplier)
+        {
+            string result = a;
+            int mult = Int32.Parse(multiplier);
+
+            for (int i = 0; i < mult - 1; i++)
+                result += a;
+
+            return result;
         }
     }
 }
