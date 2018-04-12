@@ -10,5 +10,6 @@ namespace ExpressionVerify
     {
         public string type;
         public List<List<string>> expressions = new List<List<string>>();
+        public bool IsTrue;
     }
 }
