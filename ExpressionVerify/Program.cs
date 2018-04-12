@@ -48,7 +48,7 @@ namespace ExpressionVerify
                 else
                 {
                     Expression ex = new Expression();
-                    List<char> charList = new List<char>();
+                    List<string> charList = new List<string>();
 
                     ex.type = expressionTypeTracker.Last();
                     foreach (char c in line)
@@ -56,11 +56,11 @@ namespace ExpressionVerify
                         if (c == '=')
                         {
                             ex.expressions.Add(charList);
-                            charList = new List<char>();
+                            charList = new List<string>();
                         }
                         else if (c != ' ')
                         {
-                            charList.Add(c);
+                            charList.Add(c.ToString());
                         }
 
                     }
@@ -68,92 +68,12 @@ namespace ExpressionVerify
                     expressions.Add(ex);
 
                     if (expressionTypeTracker.Last.Value == "strings")
-                        StringEqivalance(charList);
+                        StringHandler.StringEqivalance(ex);
 
                 }
             }
 
             while (true) { }
-        }
-
-        public static bool StringEqivalance(List<char> Line)
-        {
-            List<string> leftSide = new List<string>();
-            List<string> rightSide = new List<string>();
-
-            //Populate the leftside and rightside lists of the equation
-            bool setLeft = true;
-            foreach(var digit in Line)
-            {
-                if (digit.ToString() == "=") { 
-                    setLeft = false;
-                    continue; //Skip the = sign
-                }
-                if (setLeft)
-                    leftSide.Add(digit.ToString());
-                else
-                    rightSide.Add(digit.ToString());
-            }
-
-            //Simplify the results down to a single string 
-            string leftResult = SimplifySide(leftSide);
-            string rightResult = SimplifySide(rightSide);
-
-            //Compare and return results
-            return (leftResult == rightResult);
-        }
-
-        public static string SimplifySide(List<string> Side)
-        {
-            string result = "";
-
-            //Handle parenthesis
-
-            //Handle Multiplications first
-            for(int i = 0; i < Side.Count; i++)
-            {
-                if (Side[i].ToString() == "*")
-                {
-                    result = MultiplyString(Side[i - 1], Side[i + 1]); //get the result
-                    //Remove the old stuff and replace with the new result
-                    Side.RemoveAt(i - 1);
-                    Side[i - 1] = result;
-                    Side.RemoveAt(i);
-                    i = 0; //Restart loop
-                }
-            }
-
-            //Handle additions next
-            for (int i = 0; i < Side.Count; i++)
-            {
-                if (Side[i].ToString() == "+")
-                {
-                    result = AddString(Side[i - 1], Side[i + 1]); //get the result
-                    //Remove the old stuff and replace with the new result
-                    Side.RemoveAt(i - 1);
-                    Side[i - 1] = result;
-                    Side.RemoveAt(i);
-                    i = 0; //Restart loop
-                }
-            }
-
-            return result;
-        }
-
-        public static string AddString(string a, string b)
-        {
-            return a + b;
-        }
-
-        public static string MultiplyString(string a, string multiplier)
-        {
-            string result = a;
-            int mult = Int32.Parse(multiplier);
-
-            for (int i = 0; i < mult - 1; i++)
-                result += a;
-
-            return result;
         }
     }
 }
