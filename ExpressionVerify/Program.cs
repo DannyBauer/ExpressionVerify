@@ -71,7 +71,7 @@ namespace ExpressionVerify
                         ex.IsTrue = StringHandler.StringEqivalance(ex);
 
                     if (expressionTypeTracker.Last.Value == "algebra")
-                        ;
+                        ex.IsTrue = AlgebraHandler.AlbegraEquivilence(ex);                     
 
                     if (expressionTypeTracker.Last.Value == "sets")
                         ex.IsTrue = SetHandler.SetEqivalance(ex);
