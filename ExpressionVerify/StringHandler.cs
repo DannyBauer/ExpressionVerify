@@ -13,13 +13,19 @@ namespace ExpressionVerify
         {
             List<string> results = new List<string>();
 
-            //Convert to a list of strings
-            List<string> working = new List<String>();
-
             //Get the result from each side
+            foreach(var side in Line.expressions)
+                results.Add(SimplifySide(side));
 
-
-            //Compare and return results
+            for (int i = 0; i < results.Count; i++)
+            {
+                //Reached the end, stop checking
+                if (i == results.Count - 1)
+                    break;
+                //if one isnt equal to the following, it is not equivalent
+                if (results[i + 1] != results[i])
+                    return false;
+            }
             return true;
         }
 
@@ -28,6 +34,29 @@ namespace ExpressionVerify
             string result = "";
 
             //Handle parenthesis
+            List<string> substring = new List<string>();
+            int beginLoc = Side.IndexOf("(");
+            int lastLoc = Side.IndexOf(")");
+
+            if (beginLoc != -1 && lastLoc != -1)
+            {
+                for (int i = beginLoc + 1; i < lastLoc; i++)
+                    substring.Add(Side[i]);
+
+                result = HandleMultAndAdd(substring);
+                Side.RemoveRange(beginLoc, lastLoc - 1);
+                Side.Insert(beginLoc, result);
+            }
+
+
+            result = HandleMultAndAdd(Side);
+
+            return result;
+        }
+
+        public static string HandleMultAndAdd(List<string> Side)
+        {
+            string result = "";
 
             //Handle Multiplications first
             for (int i = 0; i < Side.Count; i++)
@@ -58,6 +87,7 @@ namespace ExpressionVerify
             }
 
             return result;
+
         }
 
         public static string AddString(string a, string b)
