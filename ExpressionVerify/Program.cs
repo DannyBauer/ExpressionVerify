@@ -82,7 +82,10 @@ namespace ExpressionVerify
                         Console.WriteLine(line + ex.IsTrue.ToString());
                     }
                     if (expressionTypeTracker.Last.Value == "boolean")
-                        ;
+                    {
+                        ex.IsTrue = BoolHandler.BoolEqivalance(ex);
+                        Console.WriteLine(line + ex.IsTrue.ToString());
+                    }
 
 
                 }
