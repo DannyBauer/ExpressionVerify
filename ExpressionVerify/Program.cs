@@ -74,10 +74,10 @@ namespace ExpressionVerify
                         ;
 
                     if (expressionTypeTracker.Last.Value == "sets")
-                        ;
+                        ex.IsTrue = SetHandler.SetEqivalance(ex);
 
                     if (expressionTypeTracker.Last.Value == "boolean")
-                        ex.IsTrue = StringHandler.StringEqivalance(ex);
+                        ;
 
 
                 }
