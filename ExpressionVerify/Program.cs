@@ -64,16 +64,12 @@ namespace ExpressionVerify
                         }
 
                     }
-<<<<<<< HEAD
                     ex.expressions.Add(charList);
                     expressions.Add(ex);
-=======
 
                     if (expressionTypeTracker.Last.Value == "strings")
-                        StringEqivalance(lineCharList);
+                        StringEqivalance(charList);
 
-
->>>>>>> 62a271eacf5924af7a755a0941dd11fb909addb3
                 }
             }
 
