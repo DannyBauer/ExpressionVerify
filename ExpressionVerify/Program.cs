@@ -68,7 +68,7 @@ namespace ExpressionVerify
             while (true) { }
         }
 
-        public static void StringEqivalance(List<char> Line)
+        public static bool StringEqivalance(List<char> Line)
         {
             List<char> leftSide = new List<char>();
             List<char> rightSide = new List<char>();
@@ -87,11 +87,12 @@ namespace ExpressionVerify
                     rightSide.Add(digit);
             }
 
+            //Simplify the results down to a single string 
+            string leftResult = SimplifySide(leftSide);
+            string rightResult = SimplifySide(rightSide);
 
-            SimplifySide(leftSide);
-            SimplifySide(rightSide);
-
-
+            //Compare and return results
+            return (leftResult == rightResult);
         }
 
         public static string SimplifySide(List<char> Side)
