@@ -8,5 +8,11 @@ namespace ExpressionVerify
 {
     class SetHandler
     {
+
+        public static bool SetEqivalance(Expression ex)
+        {
+
+            return true;
+        }
     }
 }

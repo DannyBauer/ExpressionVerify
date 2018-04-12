@@ -8,13 +8,12 @@ namespace ExpressionVerify
 {
     static class StringHandler
     {
-
-        public static bool StringEqivalance(Expression Line)
+        public static bool StringEqivalance(Expression ex)
         {
             List<string> results = new List<string>();
 
             //Get the result from each side
-            foreach(var side in Line.expressions)
+            foreach(var side in ex.expressions)
                 results.Add(SimplifySide(side));
 
             for (int i = 0; i < results.Count; i++)

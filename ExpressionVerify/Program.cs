@@ -67,8 +67,18 @@ namespace ExpressionVerify
                     ex.expressions.Add(charList);
                     expressions.Add(ex);
 
-                    if (expressionTypeTracker.Last.Value == "strings")
-                        StringHandler.StringEqivalance(ex);
+                    if (expressionTypeTracker.Last.Value == "strings")                    
+                        ex.IsTrue = StringHandler.StringEqivalance(ex);
+
+                    if (expressionTypeTracker.Last.Value == "algebra")
+                        ;
+
+                    if (expressionTypeTracker.Last.Value == "sets")
+                        ;
+
+                    if (expressionTypeTracker.Last.Value == "boolean")
+                        ex.IsTrue = StringHandler.StringEqivalance(ex);
+
 
                 }
             }
