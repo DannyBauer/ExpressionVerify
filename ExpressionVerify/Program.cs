@@ -17,7 +17,7 @@ namespace ExpressionVerify
                                                                                  // so to know what current tag we are in just look at the top of the list
             expressionTypeTracker.AddLast("NoTag");                                                             
             string line;
-            StreamReader file = new StreamReader("expressions.txt");
+            StreamReader file = new StreamReader("expressions2.txt");
             while ((line = file.ReadLine()) != null)
             {
 
@@ -70,24 +70,24 @@ namespace ExpressionVerify
                     if (expressionTypeTracker.Last.Value == "strings")
                     {
                         ex.IsTrue = StringHandler.StringEqivalance(ex);
-                        Console.WriteLine(line + " is " + ex.IsTrue.ToString());
+                        Console.WriteLine(ex.type + ": " + line + " is " + ex.IsTrue.ToString());
                     }
 
                     if (expressionTypeTracker.Last.Value == "algebra")
                     {
                         ex.IsTrue = AlgebraHandler.AlbegraEquivilence(ex);
-                        Console.WriteLine(line + " is " + ex.IsTrue.ToString());
+                        Console.WriteLine(ex.type + ": " + line + " is " + ex.IsTrue.ToString());
                     }
 
                     if (expressionTypeTracker.Last.Value == "sets")
                     {
                         ex.IsTrue = SetHandler.SetEqivalance(ex);
-                        Console.WriteLine(line + " is " + ex.IsTrue.ToString());
+                        Console.WriteLine(ex.type + ": " + line + " is " + ex.IsTrue.ToString());
                     }
                     if (expressionTypeTracker.Last.Value == "boolean")
                     {
                         ex.IsTrue = BoolHandler.BoolEqivalance(ex);
-                        Console.WriteLine(line + " is " + ex.IsTrue.ToString());
+                        Console.WriteLine(ex.type + ": " + line + " is " + ex.IsTrue.ToString());
                     }
                 }
             }
