@@ -70,24 +70,25 @@ namespace ExpressionVerify
                     if (expressionTypeTracker.Last.Value == "strings")
                     {
                         ex.IsTrue = StringHandler.StringEqivalance(ex);
-                        Console.WriteLine(line + ex.IsTrue.ToString());
+                        Console.WriteLine(line + " is " + ex.IsTrue.ToString());
                     }
 
                     if (expressionTypeTracker.Last.Value == "algebra")
-                        ex.IsTrue = AlgebraHandler.AlbegraEquivilence(ex);                     
+                    {
+                        ex.IsTrue = AlgebraHandler.AlbegraEquivilence(ex);
+                        Console.WriteLine(line + " is " + ex.IsTrue.ToString());
+                    }
 
                     if (expressionTypeTracker.Last.Value == "sets")
                     {
                         ex.IsTrue = SetHandler.SetEqivalance(ex);
-                        Console.WriteLine(line + ex.IsTrue.ToString());
+                        Console.WriteLine(line + " is " + ex.IsTrue.ToString());
                     }
                     if (expressionTypeTracker.Last.Value == "boolean")
                     {
                         ex.IsTrue = BoolHandler.BoolEqivalance(ex);
-                        Console.WriteLine(line + ex.IsTrue.ToString());
+                        Console.WriteLine(line + " is " + ex.IsTrue.ToString());
                     }
-
-
                 }
             }
 

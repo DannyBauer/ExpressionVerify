@@ -18,6 +18,14 @@ namespace ExpressionVerify
                 results.Add(Evaluate(stringExpression));
             }
 
+            for (int i = 0; i < (results.Count - 1); i++)
+            {
+                if (results[i] != results[i + 1])
+                {
+                    return false;
+                }
+            }
+
             return true;
         }
 
